@@ -252,7 +252,8 @@
 }
 
 @ $Script_Main {
-    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Set   *GB_WorldLocation  .Location:StarHaven
+    Set  *GF_Map_StarHaven .True
     Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
     Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
     Call  SetCamEnabled      ( .Cam:Default .True
