@@ -27,8 +27,8 @@
 
 #new:Actor $Ghast {
 [Index]        D4b 
-[Level]        100`b 
-[MaxHP]        30`b 
+[Level]        198`b 
+[MaxHP]        40`b 
 [Coins]         1`b
 [Flags]       00000000 
 [StatusTable] $StatusTable_Ghast

@@ -162,3 +162,13 @@
     Return
     End
 }
+
+@ $Script_PanCamera_CamPan1 {
+    Call  UseSettingsFrom   ( .Cam:Default 0` 0` 0` )
+    Call  SetPanTarget      ( .Cam:Default ~Vec3d:CamPan1 )
+    Call  SetCamSpeed       ( .Cam:Default *Fixed[90.000000] )
+    Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+    Call  WaitForCam        ( .Cam:Default *Fixed[1.0] )
+    Return
+    End
+}
