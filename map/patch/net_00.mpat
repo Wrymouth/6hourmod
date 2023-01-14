@@ -1,4 +1,5 @@
 #define .NpcID:Ghast        01
+#define .NpcID:Luigi        02
 
 #new:NpcGroup $NpcGroup_Ghast {
     00000001 $NpcSettings_Ghast ~Vec3f:Ghast % 100 0 -256
@@ -43,7 +44,39 @@
 
 #new:NpcGroupList $NpcGroupList_Ghast {
     00000001 $NpcGroup_Ghast 2F000000
+    00000001 $NpcGroup_Luigi 00000000
     00000000 00000000 00000000
+}
+
+#new:NpcGroup $NpcGroup_Luigi {
+    00000001 $NpcSettings_Luigi ~Vec3f:Luigi % 100 0 -256
+    00002809 $Script_Init_Luigi 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Luigi
+    ~AnimationTable:Luigi % .Sprite:Two
+    00000000 00000000 00000000 001A0064 % What is that thing?
+}
+
+#new:NpcSettings $NpcSettings_Luigi {
+    00000000 00400020 00000000 00000000 00000000 00000000 00000000 00000000
+    00000000 00000000 00630010
+}
+
+#new:Script $Script_Init_Luigi {
+    Call BindNpcIdle ( .Npc:Self $Script_Idle_Luigi )
+    Return
+    End
+}
+
+#new:Script $Script_Idle_Luigi {
+    Call GetNpcPos ( .NpcID:Luigi *VarA *VarB *VarC )
+    Loop 180`
+        Sub 1` *VarB
+        Call SetNpcPos ( .NpcID:Luigi *VarA *VarB *VarC )
+        Wait 1`
+    EndLoop
+    Return
+    End
 }
 
 @ $Script_Main {
@@ -57,7 +90,7 @@
     Exec  $Script_SetupTexturePan
     Exec  $Script_EnterMap
     Thread
-        Call  ResetFromLava ( $LavaResetList1)
+        Call  ResetFromLava ( $LavaResetList1 )
     EndThread
 	Bind $Script_StartBattleCutscene .Trigger:FloorTouch ~Collider:LavaCollider 1 0
     Return

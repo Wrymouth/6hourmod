@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="net_00" author="unnamed" textures="net_tex">
 	<Editor>
-		<Camera pos="547.247925,95.481590,253.007645" pitch="10.960000" yaw="359.840027"/>
+		<Camera pos="659.852173,67.158875,172.901932" pitch="18.480009" yaw="1.120133"/>
 		<Camera pos="639.958252,65536.000000,-6.957523"/>
 		<Camera pos="65536.000000,14.306751,26.654789"/>
-		<Camera pos="588.865051,79.478386,65536.000000"/>
+		<Camera pos="650.242615,17.171719,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="5B">
@@ -121,7 +121,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="5">
+		<Node name="Root" id="6">
 			<Node name="Entrances" id="0">
 				<Node name="Entry0" id="FFFFFFFF"/>
 			</Node>
@@ -129,6 +129,7 @@
 			<Node name="LavaResetPos" id="2"/>
 			<Node name="GhastMoveTo1" id="3"/>
 			<Node name="GhastMoveTo2" id="4"/>
+			<Node name="Luigi" id="5"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -143,7 +144,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="0">
-			<MapObject name="Lava" id="5A"/>
+			<MapObject name="Lava" id="5A" hidden="true"/>
 			<ShapeMesh ver="3" texture="lava_still">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -223,7 +224,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="54"/>
+			<MapObject name="CubeModel" id="54" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -291,7 +292,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="53"/>
+			<MapObject name="CubeModel" id="53" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -359,7 +360,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="52"/>
+			<MapObject name="CubeModel" id="52" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -427,7 +428,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="51"/>
+			<MapObject name="CubeModel" id="51" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -495,7 +496,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="50"/>
+			<MapObject name="CubeModel" id="50" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -563,7 +564,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4F"/>
+			<MapObject name="CubeModel" id="4F" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -631,7 +632,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4E"/>
+			<MapObject name="CubeModel" id="4E" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -699,7 +700,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4D"/>
+			<MapObject name="CubeModel" id="4D" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -767,7 +768,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4C"/>
+			<MapObject name="CubeModel" id="4C" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -835,7 +836,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4B"/>
+			<MapObject name="CubeModel" id="4B" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -903,7 +904,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4A"/>
+			<MapObject name="CubeModel" id="4A" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -971,7 +972,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="49"/>
+			<MapObject name="CubeModel" id="49" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1039,7 +1040,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="48"/>
+			<MapObject name="CubeModel" id="48" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1107,7 +1108,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="47"/>
+			<MapObject name="CubeModel" id="47" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1175,7 +1176,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="46"/>
+			<MapObject name="CubeModel" id="46" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1243,7 +1244,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="45"/>
+			<MapObject name="CubeModel" id="45" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1311,7 +1312,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="44"/>
+			<MapObject name="CubeModel" id="44" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1379,7 +1380,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="43"/>
+			<MapObject name="CubeModel" id="43" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1447,7 +1448,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="42"/>
+			<MapObject name="CubeModel" id="42" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1515,7 +1516,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="41"/>
+			<MapObject name="CubeModel" id="41" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1583,7 +1584,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="40"/>
+			<MapObject name="CubeModel" id="40" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1651,7 +1652,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3F"/>
+			<MapObject name="CubeModel" id="3F" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1719,7 +1720,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3E"/>
+			<MapObject name="CubeModel" id="3E" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1787,7 +1788,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3D"/>
+			<MapObject name="CubeModel" id="3D" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1855,7 +1856,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3C"/>
+			<MapObject name="CubeModel" id="3C" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1923,7 +1924,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3B"/>
+			<MapObject name="CubeModel" id="3B" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1991,7 +1992,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3A"/>
+			<MapObject name="CubeModel" id="3A" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2059,7 +2060,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="39"/>
+			<MapObject name="CubeModel" id="39" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2127,7 +2128,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="38"/>
+			<MapObject name="CubeModel" id="38" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2195,7 +2196,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="37"/>
+			<MapObject name="CubeModel" id="37" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2263,7 +2264,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="36"/>
+			<MapObject name="CubeModel" id="36" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2331,7 +2332,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="35"/>
+			<MapObject name="CubeModel" id="35" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2399,7 +2400,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="34"/>
+			<MapObject name="CubeModel" id="34" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2467,7 +2468,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="33"/>
+			<MapObject name="CubeModel" id="33" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2535,7 +2536,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="32"/>
+			<MapObject name="CubeModel" id="32" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2603,7 +2604,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="31"/>
+			<MapObject name="CubeModel" id="31" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2671,7 +2672,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="30"/>
+			<MapObject name="CubeModel" id="30" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2739,7 +2740,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2F"/>
+			<MapObject name="CubeModel" id="2F" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2807,7 +2808,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2E"/>
+			<MapObject name="CubeModel" id="2E" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2875,7 +2876,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2D"/>
+			<MapObject name="CubeModel" id="2D" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2943,7 +2944,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2C"/>
+			<MapObject name="CubeModel" id="2C" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3011,7 +3012,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2B"/>
+			<MapObject name="CubeModel" id="2B" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3079,7 +3080,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2A"/>
+			<MapObject name="CubeModel" id="2A" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3147,7 +3148,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="29"/>
+			<MapObject name="CubeModel" id="29" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3215,7 +3216,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="28"/>
+			<MapObject name="CubeModel" id="28" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3283,7 +3284,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="27"/>
+			<MapObject name="CubeModel" id="27" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3351,7 +3352,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="26"/>
+			<MapObject name="CubeModel" id="26" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3419,7 +3420,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="25"/>
+			<MapObject name="CubeModel" id="25" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3487,7 +3488,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="24"/>
+			<MapObject name="CubeModel" id="24" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3555,7 +3556,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="23"/>
+			<MapObject name="CubeModel" id="23" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3623,7 +3624,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="22"/>
+			<MapObject name="CubeModel" id="22" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3691,7 +3692,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="21"/>
+			<MapObject name="CubeModel" id="21" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3759,7 +3760,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="20"/>
+			<MapObject name="CubeModel" id="20" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3827,7 +3828,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1F"/>
+			<MapObject name="CubeModel" id="1F" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3895,7 +3896,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1E"/>
+			<MapObject name="CubeModel" id="1E" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3963,7 +3964,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1D"/>
+			<MapObject name="CubeModel" id="1D" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4031,7 +4032,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1C"/>
+			<MapObject name="CubeModel" id="1C" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4091,7 +4092,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1B"/>
+			<MapObject name="CubeModel" id="1B" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4151,7 +4152,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1A"/>
+			<MapObject name="CubeModel" id="1A" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4211,7 +4212,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="19"/>
+			<MapObject name="CubeModel" id="19" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4279,7 +4280,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="18"/>
+			<MapObject name="CubeModel" id="18" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4347,7 +4348,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="17"/>
+			<MapObject name="CubeModel" id="17" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4415,7 +4416,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="16"/>
+			<MapObject name="CubeModel" id="16" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4483,7 +4484,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="15"/>
+			<MapObject name="CubeModel" id="15" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4535,7 +4536,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="14"/>
+			<MapObject name="CubeModel" id="14" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4579,7 +4580,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="13"/>
+			<MapObject name="CubeModel" id="13" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4647,7 +4648,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="12"/>
+			<MapObject name="CubeModel" id="12" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4691,7 +4692,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="11"/>
+			<MapObject name="CubeModel" id="11" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4735,7 +4736,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="10"/>
+			<MapObject name="CubeModel" id="10" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4779,7 +4780,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="F"/>
+			<MapObject name="CubeModel" id="F" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4847,7 +4848,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="E"/>
+			<MapObject name="CubeModel" id="E" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4891,7 +4892,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="D"/>
+			<MapObject name="CubeModel" id="D" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4959,7 +4960,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="C"/>
+			<MapObject name="CubeModel" id="C" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5027,7 +5028,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="B"/>
+			<MapObject name="CubeModel" id="B" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5063,7 +5064,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="A"/>
+			<MapObject name="CubeModel" id="A" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5107,7 +5108,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="9"/>
+			<MapObject name="CubeModel" id="9" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5151,7 +5152,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="8"/>
+			<MapObject name="CubeModel" id="8" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5195,7 +5196,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="7"/>
+			<MapObject name="CubeModel" id="7" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5247,7 +5248,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="6"/>
+			<MapObject name="CubeModel" id="6" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5291,7 +5292,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="5"/>
+			<MapObject name="CubeModel" id="5" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5335,7 +5336,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="4"/>
+			<MapObject name="CubeModel" id="4" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5379,7 +5380,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="3"/>
+			<MapObject name="CubeModel" id="3" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5431,7 +5432,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="2"/>
+			<MapObject name="CubeModel" id="2" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5459,7 +5460,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="1"/>
+			<MapObject name="CubeModel" id="1" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5519,7 +5520,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="0"/>
+			<MapObject name="CubeModel" id="0" hidden="true"/>
 			<ShapeMesh ver="3" texture="netherrack">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -5561,7 +5562,7 @@
 			<HitObject type="ROOT"/>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="DrawnCollider" id="8" hidden="true"/>
+			<MapObject name="DrawnCollider" id="8"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -5587,7 +5588,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="7" hidden="true"/>
+			<MapObject name="MeshCollider" id="7"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -5607,7 +5608,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="2">
-			<MapObject name="LavaCollider" id="6" hidden="true"/>
+			<MapObject name="LavaCollider" id="6"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -5627,7 +5628,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="5" hidden="true"/>
+			<MapObject name="MeshCollider" id="5"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -5767,7 +5768,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="4" hidden="true"/>
+			<MapObject name="MeshCollider" id="4"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -5971,7 +5972,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0">
-			<MapObject name="MeshCollider" id="3" hidden="true"/>
+			<MapObject name="MeshCollider" id="3"/>
 			<HitObject type="HIT"/>
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
@@ -6248,7 +6249,12 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="5"/>
+			<MapObject name="Root" id="6"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="658,-23,21" yaw="0.000000">
+			<MapObject name="Luigi" id="5"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="82" palette="0" animations="3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="556,2,-58" yaw="0.000000">
 			<MapObject name="GhastMoveTo2" id="4"/>
