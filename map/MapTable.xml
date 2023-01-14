@@ -568,6 +568,9 @@
 		<Map name="tst_13" nickname="Partners and Shockwave"/>
 		<Map name="tst_20" nickname="Pipes Gallery"/>
 	</Area>
+	<Area name="net" nickname="Nether">
+		<Map name="net_00"/>
+	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
 	<Resource name="kgr_tex" compressed="false"/>
