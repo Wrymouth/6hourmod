@@ -1,15 +1,17 @@
+#define .NpcID:Ghast        01
+
 #new:NpcGroup $NpcGroup_Ghast {
     00000001 $NpcSettings_Ghast ~Vec3f:Ghast % 100 0 -256
-	00002809 $Script_Init_Ghast 00000000 00000000 0000005A
-	~NoDrops
-	~Movement:Ghast
-	~AnimationTable:Ghast % .Sprite:Two
-	00000000 00000000 00000000 001A0064 % What is that thing?
+    00002809 $Script_Init_Ghast 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Ghast
+    ~AnimationTable:Ghast % .Sprite:Two
+    00000000 00000000 00000000 001A0064 % What is that thing?
 }
 
 #new:NpcSettings $NpcSettings_Ghast {
     00000000 00400020 00000000 00000000 00000000 00000000 00000000 00000000
-	00000000 00000000 00630010
+    00000000 00000000 00630010
 }
 
 #new:Script $Script_Init_Ghast {
@@ -19,7 +21,7 @@
 }
 
 #new:Script $Script_Interact_Ghast {
-    Call StartBossBattle ( .Song:WhaleTheme )
+    Call StartBossBattle ( .Song:LavaPiranhaBattle )
     Return
     End
 }
@@ -39,6 +41,42 @@
     Exec  $Script_SetupMusic
     Exec  $Script_SetupTexturePan
     Exec  $Script_EnterMap
+    Thread
+        Call  ResetFromLava ( $LavaResetList1)
+    EndThread
+	Bind $Script_StartBattleCutscene .Trigger:FloorTouch ~Collider:LavaCollider 1 0
+    Return
+    End
+}
+
+#new:LavaResetList $LavaResetList1
+{
+	~Collider:LavaCollider ~Vec3f:LavaResetPos
+    FFFFFFFF 00000000 00000000 00000000
+}
+
+#new:Script $Script_StartBattleCutscene
+{
+    Call DisablePlayerInput ( .True )
+    Wait 180`
+    Call NpcFacePlayer ( .NpcID:Ghast 1` )
+    Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo1 60` 5` .Easing:Linear )
+    Call NpcFacePlayer ( .NpcID:Ghast 1` )
+    Wait 5`
+    Call PlayerFaceNpc ( .NpcID:Ghast .False )
+    Thread
+        Wait 15`
+        Call SetPlayerAnimation ( 0001002B )
+    EndThread
+    Call GetPlayerPos ( *VarA *VarB *VarC )
+    Call ShowEmote ( 00000000 .Emote:Exclamation -45` 30` .False *VarA *VarB *VarC 0` )
+    Wait 15`
+    Thread
+        Wait 10`
+        Exec $Script_Interact_Ghast
+    EndThread
+    Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo2 15` 5` .Easing:Linear )
+    Call DisablePlayerInput ( .False )
     Return
     End
 }

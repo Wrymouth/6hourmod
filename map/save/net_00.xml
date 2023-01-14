@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="net_00" author="unnamed" textures="net_tex">
 	<Editor>
-		<Camera pos="592.255127,245.452637,565.431885" pitch="22.639999" yaw="359.839935"/>
-		<Camera pos="1030.215454,65536.000000,31.609137"/>
+		<Camera pos="547.247925,95.481590,253.007645" pitch="10.960000" yaw="359.840027"/>
+		<Camera pos="639.958252,65536.000000,-6.957523"/>
 		<Camera pos="65536.000000,14.306751,26.654789"/>
-		<Camera pos="983.440002,91.604652,65536.000000"/>
+		<Camera pos="588.865051,79.478386,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="5B">
@@ -121,12 +121,14 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="3">
+		<Node name="Root" id="5">
 			<Node name="Entrances" id="0">
 				<Node name="Entry0" id="FFFFFFFF"/>
 			</Node>
 			<Node name="Ghast" id="1"/>
-			<Node name="LavaReset" id="2"/>
+			<Node name="LavaResetPos" id="2"/>
+			<Node name="GhastMoveTo1" id="3"/>
+			<Node name="GhastMoveTo2" id="4"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -6246,12 +6248,18 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="3"/>
+			<MapObject name="Root" id="5"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="556,2,-58" yaw="0.000000">
+			<MapObject name="GhastMoveTo2" id="4"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="521,20,20" yaw="0.000000">
+			<MapObject name="GhastMoveTo1" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="573,0,-88" yaw="0.000000">
-			<MapObject name="LavaReset" id="2"/>
+			<MapObject name="LavaResetPos" id="2"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="300,0,0" yaw="0.000000">
+		<Marker ver="4" type="NPC" pos="500,-110,20" yaw="0.000000">
 			<MapObject name="Ghast" id="1"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
