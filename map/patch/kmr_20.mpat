@@ -1,7 +1,7 @@
 #new:Function $Function_StartGame {
     LIO t0, 8010F290
     ORI t1, r0, 1 %boots/hammer value
-    ORI t2, r0, 14 %hp/fp values
+    ORI t2, r0, 1E %hp/fp values
     ORI t3, r0, 6 %bp value
     SB t1, 0000 (t0) %set boots
     SB t1, 0001 (t0) %set hammer

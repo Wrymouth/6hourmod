@@ -28,7 +28,7 @@
 #new:Actor $Ghast {
 [Index]        D4b 
 [Level]        100`b 
-[MaxHP]        50`b 
+[MaxHP]        30`b 
 [Coins]         1`b
 [Flags]       00000000 
 [StatusTable] $StatusTable_Ghast
@@ -88,7 +88,7 @@
 }
 
 #new:IdleAnimations $IdleAnimations_FireCharge {
-    .Status:Normal   00EA0001
+    .Status:Normal   00EA0002
     .Status:End
 }
 

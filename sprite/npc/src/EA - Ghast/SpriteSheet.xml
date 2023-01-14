@@ -9,11 +9,34 @@
 		<Raster id="1" palette="1" src="Raster_01.png"/>
 	</RasterList>
 	<AnimationList>
-		<Animation name="AllAnims">
+		<Animation name="IdleAnim">
 			<Component xyz="0,0,0">
 				<Command val="1000"/>
-				<Command val="2"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="10"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="6"/>
+				<Command val="0"/>
+				<Command val="10"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="C"/>
+				<Command val="0"/>
+				<Command val="10"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="6"/>
+				<Command val="0"/>
+				<Command val="10"/>
 				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="StillAnim">
+			<Component xyz="0,0,0">
 			</Component>
 		</Animation>
 		<Animation name="FireCharge">
