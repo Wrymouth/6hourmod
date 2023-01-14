@@ -16,7 +16,6 @@
 
 #new:Script $Script_Init_Ghast {
     Call BindNpcIdle ( .Npc:Self $Script_Idle_Ghast )
-    Call BindNpcInteract ( .Npc:Self $Script_Interact_Ghast )
     Call BindNpcDefeat ( .Npc:Self $Script_Defeat_Ghast )
     Return
     End
@@ -38,11 +37,6 @@
         EndLoop
     EndThread
     Label A
-    Return
-    End
-}
-
-#new:Script $Script_Interact_Ghast {
     Return
     End
 }
@@ -79,25 +73,24 @@
 #new:Script $Script_StartBattleCutscene
 {
     Call DisablePlayerInput ( .True )
-    Wait 180`
+    Wait 60`
     Call NpcFacePlayer ( .NpcID:Ghast 1` )
     Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo1 60` 5` .Easing:Linear )
     Call NpcFacePlayer ( .NpcID:Ghast 1` )
-    Wait 5`
+    Wait 2`
     Call PlayerFaceNpc ( .NpcID:Ghast .False )
     Thread
-        Wait 15`
+        Wait 10`
         Call SetPlayerAnimation ( 0001002B )
     EndThread
     Call GetPlayerPos ( *VarA *VarB *VarC )
     Call ShowEmote ( 00000000 .Emote:Exclamation -45` 30` .False *VarA *VarB *VarC 0` )
-    Wait 15`
+    Wait 10`
     Thread
-        Wait 10`
-        Exec $Script_Interact_Ghast
+        Wait 7`
+        Set *MapVar[1] 1
     EndThread
-    Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo2 15` 5` .Easing:Linear )
-    Set *MapVar[1] 1
+    Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo2 10` 5` .Easing:Linear )
     Call DisablePlayerInput ( .False )
     Return
     End
