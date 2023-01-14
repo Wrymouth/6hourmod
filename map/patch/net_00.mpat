@@ -68,6 +68,8 @@
 }
 
 #new:Script $Script_LuigiSink {
+    Call SetNpcPos ( .NpcID:Luigi ~Vec3D:LuigiMoveTo )
+    Call SetNpcAnimation ( .NpcID:Luigi 0082001F )
     Call GetNpcPos ( .NpcID:Luigi *VarA *VarB *VarC )
     Loop 180`
         Sub *VarB 1
@@ -148,16 +150,22 @@
     Call NpcJump0 ( .NpcID:Luigi ~Vec3D:LuigiJumpTo 30` )
     Wait 30`
     Thread
-        Call InterpNpcYaw ( .NpcID:Luigi -127` 15` )
-        Wait 10`
-        Call InterpNpcYaw ( .NpcID:Luigi 97` 15` )
+        Call InterpPlayerYaw ( 97` 15` )
     EndThread
+    Call InterpNpcYaw ( .NpcID:Luigi -127` 15` )
+    Wait 15`
+    Call InterpNpcYaw ( .NpcID:Luigi 97` 15` )
+    Wait 15`
+    Call InterpNpcYaw ( .NpcID:Luigi -127` 15` )
+    Wait 15`
     Call ShowEmote ( .NpcID:Luigi .Emote:Question -45` 30` .True 0` 0` 0` 0` )
-    Wait 25`
+    Wait 30`
+    Call SetNpcAnimation ( .NpcID:Luigi 0082000A )
     Call ShowEmote ( .NpcID:Luigi .Emote:Exclamation -45` 30` .True 0` 0` 0` 0` )
-    Wait 5`
+    Wait 20`
     Exec $Script_PanCamera_CamPan3
     Call ResetCam ( .Cam:Default 5` )
+    Exec $Script_LuigiSink
     Call DisablePlayerInput ( .False )
     Return
     End
