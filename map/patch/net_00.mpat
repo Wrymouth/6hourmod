@@ -148,7 +148,14 @@
 #new:Script $Script_Defeat_Ghast {
     Call DisablePlayerInput ( .True )
     Call SetNpcPos ( 1 0` -1000` 0` )
-    Call SetNpcPos ( 3 627` -4` 38` )
+    Call SetNpcPos ( 2 0` -1000` 0` )
+    Call SetNpcPos ( 3 627` -60` 38` )
+    Set *Var0 -60`
+    Loop 60`
+        Add *Var0 1`
+        Call SetNpcPos ( 3 627` *Var0 38` )
+        Wait 1`
+    EndLoop
     Wait 30`
     Call SetNpcAnimation ( 3 00530009 )
     Wait 25`
@@ -158,6 +165,7 @@
     Wait 20`
     Call SetNpcAnimation ( 3 00530003 )
     Call SetPlayerAnimation ( 0001002B )
+    Call  PlaySoundAtPlayer    ( 8000004C 00000000 )
     Call GetPlayerPos ( *Var1 *Var2 *Var3 )
     Thread
         Call NpcMoveTo ( 3 *Var1 *Var3 30` )
