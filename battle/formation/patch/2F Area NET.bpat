@@ -1,5 +1,5 @@
 #new:FormationTable $FormationTable_NET {
-    "GhastBoss" 00000004 $Formation_00 $Stage_Net00 00000000
+    "GhastBoss" 00000001 $Formation_00 $Stage_Net00 00000000
 	00000000 00000000 00000000 00000000 00000000
 }
 
@@ -9,7 +9,7 @@
 }
 
 #new:Stage $Stage_Net00 {
-    "net_tex"
+    "kpa_tex"
     "net_bt00_shape"
     "net_bt00_hit"
     00000000
@@ -33,7 +33,7 @@
 [Flags]       00000000 
 [StatusTable] $StatusTable_Ghast
 % ai
-[PartsCount]    1`s 
+[PartsCount]    2`s 
 [PartsTable]  $PartsTable_Ghast
 [Script]      $Script_Init_Ghast
 % move effectiveness
@@ -60,10 +60,16 @@
 }
 
 #new:PartsTable $PartsTable_Ghast {
-    00800000 01000000 F04000FF $IdleAnimations_Ghast $DefenseTable_Ghast 00000000 00000000 00F00000 00000000 
+    00800000 01000000 005000FF $IdleAnimations_Ghast $DefenseTable_Ghast 00000000 00000000 00F00000 00000000 
+    20120001 02000000 000000FF $IdleAnimations_FireCharge $DefenseTable_FireCharge 00000000 00000000 00F00000 00000000 
 }
 
 #new:DefenseTable $DefenseTable_Ghast {
+    .Element:Normal 00000000
+    .Element:End
+}
+
+#new:DefenseTable $DefenseTable_FireCharge {
     .Element:Normal 00000001
     .Element:End
 }
@@ -71,13 +77,18 @@
 #new:IdleAnimations $IdleAnimations_Ghast {
     .Status:Normal    00EA0000
     .Status:Stone     00EA0000
-    .Status:Sleep     00EA0001
+    .Status:Sleep     00EA0000
     .Status:Poison    00EA0000
     .Status:Stop      00EA0000
     .Status:Static    00EA0000
     .Status:Paralyze  00EA0000
     .Status:Dizzy     00EA0000
     .Status:Fear      00EA0000
+    .Status:End
+}
+
+#new:IdleAnimations $IdleAnimations_FireCharge {
+    .Status:Normal   00EA0001
     .Status:End
 }
 
@@ -91,46 +102,71 @@
 }
 
 #new:Script $Script_NextTurn_Ghast {
-    Call GetBattlePhase ( *Var0 )
-    If *Var0 == .Phase:EnemyEnd 
-        Call SetBattleVar ( 1 0 )
-        If *NoDamageFirstTurn == 1
-            Set *NoDamageFirstTurn .False
-        EndIf
-    EndIf
-    If *DamageBoss10 == 1
-        Set *DamageBoss10 0
-    EndIf
     Return
     End
 }
 
-#new:Function $Function_DamageBoss4 {
+#new:Function $Function_DamageBoss5 {
     LIO t0, 800DC070
-    ORI t3, r0, 0004 % hp to subtract
-    ORI t5, r0, 0003 % loop counter
+    ORI t3, r0, 0005 % hp to subtract
     ORI t6, r0, 0001
-    .loopDone
     LW t1, 00E0(t0) % start of actor pointer list, t1 is the first pointer
     LB t2, 01B8(t1) % load hp
     SUB t4, t2, t3
-    SUB t5, t5, t6 % decrement loop counter
     SB t4, 01B8(t1)
-    ADDIU t0, t0, 0004 % increment pointer list
-    BGEZ t5, .loopDone
-    NOP
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Script $Script_TakeTurn_Ghast {
-
+    % shoot a fire charge at Mario
+    Call GetPartPos ( .Actor:Self 01 *Var0 *Var1 *Var2 )
+    Sub  *Var0 20
+    Add *Var1 5`
+    Call SetPartPos ( .Actor:Self 02 *Var0 *Var1 *Var2 )
+    Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .False )
+    Call SetTargetActor ( .Actor:Self .Actor:Player )
+    Call SetGoalToTarget ( .Actor:Self )
+    Call EnemyTestTarget ( .Actor:Self *Var0 ~Flags:DamageType:Fire 0 5 10 )
+    % switch
+    Switch *Var0
+        CaseOR == .HitResult:Miss
+        CaseOR == .HitResult:Lucky
+            If  *VarA  ==  .HitResult:Lucky % 5
+                Call  EnemyTestTarget   ( .Actor:Self *Var0 ~Flags:DamageType:TriggerLucky 00000000 00000000 00000000 )
+            EndIf
+            Call GetGoalPos ( .Actor:Self *Var1 *Var2 *Var3 )
+            Sub *Var1 20
+            Sub *Var2 20
+            Call SetPartMoveSpeed  ( .Actor:Self 00000002 *Fixed[5.0] )
+            Call SetPartJumpGravity    ( .Actor:Self 00000002 *Fixed[0.1] )
+            Call FlyPartTo ( .Actor:Self 2 *Var1 *Var2 *Var3 0` 0` 0 )
+            Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .True )
+            Return
+    EndSwitch
+    Call GetGoalPos ( .Actor:Self *Var1 *Var2 *Var3 )
+    Call SetPartMoveSpeed  ( .Actor:Self 00000002 *Fixed[5.0] )
+    Call SetPartJumpGravity    ( .Actor:Self 00000002 *Fixed[0.1] )
+    Call FlyPartTo ( .Actor:Self 2 *Var1 *Var2 *Var3 0` 0` 0 )
+    Call EnemyDamageTarget ( .Actor:Self *Var0 ~Flags:DamageType:Fire 0 0 5 20 )
+    Call GetBattleFlags ( *Var0 )
+    If *Var0 & 80000000 % attack was blocked
+        Call SetGoalToHome ( .Actor:Self )
+        Call GetGoalPos ( .Actor:Self *Var1 *Var2 *Var3 )
+        Call FlyPartTo ( .Actor:Self 2 *Var1 *Var2 *Var3 0` 0` 0 )
+        Call $Function_DamageBoss5 (  )
+        Call PlayEffect ( ~FX:ShowDamageAmount *Var1 *Var2 *Var3 5` 1` 5` )
+        Wait 40`
+        Call RemoveEffect ( *VarF )
+        % Call PlaySound (  )
+    EndIf
+    Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .True )
     Return
     End
 }
 
 #new:Script $Script_Idle_Ghast {
-    Call SetActorScale ( .Actor:Self *Fixed[0.7] *Fixed[0.7] *Fixed[0.7] )
+    Call SetPartScale ( .Actor:Self 02 *Fixed[2.0] *Fixed[2.0] *Fixed[2.0] )
     Return
     End
 }

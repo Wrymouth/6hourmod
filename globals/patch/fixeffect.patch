@@ -1,0 +1,11 @@
+% PlayEffect is supposed to save the pointer of the FX in Var[F], although this doesn't happen always
+% this patches fixes that.
+@Data FE040 % 802D9690
+{
+    10400005 % BEQZ    V0, 802D96A8
+}
+
+@Function FE054 % 802D96A4
+{
+    DADDU    A2, V0, R0
+}

@@ -1,0 +1,44 @@
+#new:NpcGroup $NpcGroup_Ghast {
+    00000001 $NpcSettings_Ghast ~Vec3f:Ghast % 100 0 -256
+	00002809 $Script_Init_Ghast 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Ghast
+	~AnimationTable:Ghast % .Sprite:Two
+	00000000 00000000 00000000 001A0064 % What is that thing?
+}
+
+#new:NpcSettings $NpcSettings_Ghast {
+    00000000 00400020 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+#new:Script $Script_Init_Ghast {
+    Call BindNpcInteract ( .Npc:Self $Script_Interact_Ghast )
+    Return
+    End
+}
+
+#new:Script $Script_Interact_Ghast {
+    Call StartBossBattle ( .Song:WhaleTheme )
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_Ghast {
+    00000001 $NpcGroup_Ghast 2F000000
+    00000000 00000000 00000000
+}
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Call  MakeNpcs           ( .False $NpcGroupList_Ghast )
+    Exec  $Script_SetupMusic
+    Exec  $Script_SetupTexturePan
+    Exec  $Script_EnterMap
+    Return
+    End
+}

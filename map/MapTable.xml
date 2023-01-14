@@ -570,6 +570,7 @@
 	</Area>
 	<Area name="net" nickname="Nether">
 		<Map name="net_00"/>
+		<Stage name="net_bt00" nickname="Battle"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
 	<Resource name="tik_tex" compressed="false"/>
