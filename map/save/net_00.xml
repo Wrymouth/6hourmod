@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="net_00" author="unnamed" textures="net_tex">
 	<Editor>
-		<Camera pos="103.681343,124.036812,432.567749" pitch="10.000000" yaw="0.000000"/>
-		<Camera pos="142.102631,65536.000000,-2.366462"/>
-		<Camera pos="65536.000000,5.950461,26.776081"/>
-		<Camera pos="393.058685,246.534927,65536.000000"/>
+		<Camera pos="526.356384,51.875530,237.584381" pitch="-3.839975" yaw="352.560272"/>
+		<Camera pos="510.000000,65536.000000,-90.000000"/>
+		<Camera pos="65536.000000,105.000000,75.009575"/>
+		<Camera pos="510.000000,105.000000,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="5B">
@@ -122,7 +122,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="B">
+		<Node name="Root" id="D">
 			<Node name="Entrances" id="0">
 				<Node name="Entry0" id="FFFFFFFF"/>
 			</Node>
@@ -136,6 +136,8 @@
 			<Node name="CamPan1" id="8"/>
 			<Node name="CamPan2" id="9"/>
 			<Node name="CamPan3" id="A"/>
+			<Node name="DryBones" id="B"/>
+			<Node name="DryBonesSpawn" id="C"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -6275,7 +6277,15 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="B"/>
+			<MapObject name="Root" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="627,-19,38" yaw="0.000000">
+			<MapObject name="DryBonesSpawn" id="C"/>
+		</Marker>
+		<Marker ver="4" type="NPC" pos="380,270,-191" yaw="0.000000">
+			<MapObject name="DryBones" id="B"/>
+			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="53" palette="0" animations="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="146,0,11" yaw="0.000000">
 			<MapObject name="CamPan3" id="A"/>
@@ -6283,19 +6293,19 @@
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="564,0,-74" yaw="0.000000">
 			<MapObject name="CamPan2" id="9"/>
-			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" samplePos="0,0,0"/>
+			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" samplePos="0,0,0" overrideLength="450.000000" overrideAngles="15.000000,-6.000000"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="901,0,-2" yaw="0.000000">
 			<MapObject name="CamPan1" id="8"/>
-			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" samplePos="0,0,0"/>
+			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" samplePos="0,0,0" overrideLength="450.000000" overrideAngles="15.000000,-6.000000"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="627,-4,38" yaw="0.000000">
-			<MapObject name="LuigiMoveTo" id="7"/>
+			<MapObject name="LuigiMoveTo" id="7" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="901,0,-2" yaw="0.000000">
 			<MapObject name="LuigiJumpTo" id="6"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="392,270,-192" yaw="0.000000">
+		<Marker ver="4" type="NPC" pos="410,270,-192" yaw="0.000000">
 			<MapObject name="Luigi" id="5"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="82" palette="0" animations="4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
