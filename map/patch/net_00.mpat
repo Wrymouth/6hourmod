@@ -15,13 +15,34 @@
 }
 
 #new:Script $Script_Init_Ghast {
+    Call BindNpcIdle ( .Npc:Self $Script_Idle_Ghast )
     Call BindNpcInteract ( .Npc:Self $Script_Interact_Ghast )
+    Call BindNpcDefeat ( .Npc:Self $Script_Defeat_Ghast )
+    Return
+    End
+}
+
+#new:Script $Script_Defeat_Ghast {
+    Return
+    End
+}
+
+#new:Script $Script_Idle_Ghast {
+    Thread
+        Loop
+            If *MapVar[1] == 1
+                Call StartBossBattle ( .Song:LavaPiranhaBattle )
+                Goto A
+            EndIf
+            Wait 1
+        EndLoop
+    EndThread
+    Label A
     Return
     End
 }
 
 #new:Script $Script_Interact_Ghast {
-    Call StartBossBattle ( .Song:LavaPiranhaBattle )
     Return
     End
 }
@@ -76,6 +97,7 @@
         Exec $Script_Interact_Ghast
     EndThread
     Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo2 15` 5` .Easing:Linear )
+    Set *MapVar[1] 1
     Call DisablePlayerInput ( .False )
     Return
     End
