@@ -9,9 +9,9 @@
 }
 
 #new:Stage $Stage_Net00 {
-    "kpa_tex"
-    "net_bt00_shape"
-    "net_bt00_hit"
+    "net_tex"
+    "net_bt01_shape"
+    "net_bt01_hit"
     00000000
     00000000
     00000000
@@ -155,10 +155,10 @@
         Call GetGoalPos ( .Actor:Self *Var1 *Var2 *Var3 )
         Call FlyPartTo ( .Actor:Self 2 *Var1 *Var2 *Var3 0` 0` 0 )
         Call $Function_DamageBoss5 (  )
-        Call PlayEffect ( ~FX:ShowDamageAmount *Var1 *Var2 *Var3 5` 1` 5` )
+        Call PlaySound ( E1 )
+        Call PlayEffect ( ~FX:ShowDamageAmount *Var1 *Var2 *Var3 10` 60` 5` )
         Wait 40`
         Call RemoveEffect ( *VarF )
-        % Call PlaySound (  )
     EndIf
     Call SetPartFlagBits   ( .Actor:Self 00000002 00000001 .True )
     Return
