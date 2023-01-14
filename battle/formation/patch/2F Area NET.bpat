@@ -1,0 +1,191 @@
+#new:FormationTable $FormationTable_NET {
+    "GhastBoss" 00000004 $Formation_00 $Stage_Net00 00000000
+	00000000 00000000 00000000 00000000 00000000
+}
+
+#new:StageTable $StageTable_NET {
+    "net_00" $Stage_Net00
+    00000000 00000000
+}
+
+#new:Stage $Stage_Net00 {
+    "net_tex"
+    "net_bt00_shape"
+    "net_bt00_hit"
+    00000000
+    00000000
+    00000000
+    00000000
+    00000000
+    00000000
+    00000000
+}
+
+#new:Formation $Formation_00 {
+    $Ghast 00000005 0000000A 00000000 00000000 00000000 00000000
+}
+
+#new:Actor $Ghast {
+[Index]        D4b 
+[Level]        100`b 
+[MaxHP]        50`b 
+[Coins]         1`b
+[Flags]       00000000 
+[StatusTable] $StatusTable_Ghast
+% ai
+[PartsCount]    1`s 
+[PartsTable]  $PartsTable_Ghast
+[Script]      $Script_Init_Ghast
+% move effectiveness
+[Escape]       60`b 
+[Item]         60`b 
+[AirLift]      75`b 
+[Hurricane]    75`b % Bow's "Spook" as well
+[UpAndAway]    95`b 
+[PowerBounce]  90`b 
+[SpinSmash]     0`b % weight (0-4)
+% ui positions
+[Size]         90`b  70`b % width height
+[HealthBar]     0`b   0`b % dx dy
+[StatusTurn]  -10`b  20`b % dx dy
+[StatusIcon]   10`b  20`b % dx dy
+}
+
+#new:StatusTable $StatusTable_Ghast {
+    .Status:Normal      0`
+    .Status:Default     0`
+    .Status:Sleep      80`
+    .Status:Paralyze   60`
+    .Status:End
+}
+
+#new:PartsTable $PartsTable_Ghast {
+    00800000 01000000 F04000FF $IdleAnimations_Ghast $DefenseTable_Ghast 00000000 00000000 00F00000 00000000 
+}
+
+#new:DefenseTable $DefenseTable_Ghast {
+    .Element:Normal 00000001
+    .Element:End
+}
+
+#new:IdleAnimations $IdleAnimations_Ghast {
+    .Status:Normal    00EA0000
+    .Status:Stone     00EA0000
+    .Status:Sleep     00EA0001
+    .Status:Poison    00EA0000
+    .Status:Stop      00EA0000
+    .Status:Static    00EA0000
+    .Status:Paralyze  00EA0000
+    .Status:Dizzy     00EA0000
+    .Status:Fear      00EA0000
+    .Status:End
+}
+
+#new:Script $Script_Init_Ghast {
+    Call BindTakeTurn ( .Actor:Self $Script_TakeTurn_Ghast )
+    Call BindIdle ( .Actor:Self $Script_Idle_Ghast )
+    Call BindHandleEvent ( .Actor:Self $Script_HandleEvent_Ghast )
+    Call BindNextTurn ( .Actor:Self $Script_NextTurn_Ghast )
+    Return
+    End
+}
+
+#new:Script $Script_NextTurn_Ghast {
+    Call GetBattlePhase ( *Var0 )
+    If *Var0 == .Phase:EnemyEnd 
+        Call SetBattleVar ( 1 0 )
+        If *NoDamageFirstTurn == 1
+            Set *NoDamageFirstTurn .False
+        EndIf
+    EndIf
+    If *DamageBoss10 == 1
+        Set *DamageBoss10 0
+    EndIf
+    Return
+    End
+}
+
+#new:Function $Function_DamageBoss4 {
+    LIO t0, 800DC070
+    ORI t3, r0, 0004 % hp to subtract
+    ORI t5, r0, 0003 % loop counter
+    ORI t6, r0, 0001
+    .loopDone
+    LW t1, 00E0(t0) % start of actor pointer list, t1 is the first pointer
+    LB t2, 01B8(t1) % load hp
+    SUB t4, t2, t3
+    SUB t5, t5, t6 % decrement loop counter
+    SB t4, 01B8(t1)
+    ADDIU t0, t0, 0004 % increment pointer list
+    BGEZ t5, .loopDone
+    NOP
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Script $Script_TakeTurn_Ghast {
+
+    Return
+    End
+}
+
+#new:Script $Script_Idle_Ghast {
+    Call SetActorScale ( .Actor:Self *Fixed[0.7] *Fixed[0.7] *Fixed[0.7] )
+    Return
+    End
+}
+
+#new:Script $Script_HandleEvent_Ghast {
+    Call GetLastEvent ( .Actor:Self *Var0 )
+    Switch *Var0
+    Case == .Event:Death
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoNormalHit 
+        Wait  10`
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoDeath
+    Case == .Event:ShockHit
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoShockHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoJumpBack 
+        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
+        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[2.0] )
+        Call SetAnimation  ( .Actor:Self 00000001 00EA0000 )
+        Call SetGoalToHome ( .Actor:Self )
+        Call SetActorSpeed ( .Actor:Self *Fixed[8.0] )
+        Call RunToGoal     ( .Actor:Self  0` .False )
+        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[1.0] )
+        Wait  5`
+        Call SetAnimation  ( .Actor:Self 00000001 00EA0000 )
+        Call SetActorJumpGravity   ( .Actor:Self *Fixed[1.6] )
+        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
+    Case == .Event:ShockDeath
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoShockHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000 
+        ExecWait  DoDeath 
+    Case  ==  .Event:BurnHit % E
+        BC:  		SetConst  *Var0  00000001 
+        CC:  		SetConst  *Var1  00EA0000 
+        DC:  		SetConst  *Var2  00EA0000 
+        EC:  		ExecWait  DoBurnHit 
+    Case  ==  .Event:BurnDeath % 24
+       104:  		SetConst  *Var0  00000001 
+       114:  		SetConst  *Var1  00EA0000 
+       124:  		SetConst  *Var2  00EA0000 
+       134:  		ExecWait  DoBurnHit 
+       140:  		SetConst  *Var0  00000001 
+       150:  		SetConst  *Var1  00EA0000 
+       160:  		ExecWait  DoDeath 
+    Return
+    EndSwitch 
+    Return
+    End
+}
