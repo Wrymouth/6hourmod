@@ -49,7 +49,7 @@
 }
 
 #new:NpcGroup $NpcGroup_Luigi {
-    00000001 $NpcSettings_Luigi ~Vec3f:Luigi % 100 0 -256
+    00000002 $NpcSettings_Luigi ~Vec3f:Luigi % 100 0 -256
     00002809 $Script_Init_Luigi 00000000 00000000 0000005A
     ~NoDrops
     ~Movement:Luigi
@@ -63,17 +63,16 @@
 }
 
 #new:Script $Script_Init_Luigi {
-    Call BindNpcIdle ( .Npc:Self $Script_Idle_Luigi )
     Return
     End
 }
 
-#new:Script $Script_Idle_Luigi {
+#new:Script $Script_LuigiSink {
     Call GetNpcPos ( .NpcID:Luigi *VarA *VarB *VarC )
     Loop 180`
-        Sub 1` *VarB
+        Sub *VarB 1
         Call SetNpcPos ( .NpcID:Luigi *VarA *VarB *VarC )
-        Wait 1`
+        Wait 10`
     EndLoop
     Return
     End
@@ -125,6 +124,23 @@
     EndThread
     Call NpcFlyTo ( .NpcID:Ghast ~Vec3D:GhastMoveTo2 10` 5` .Easing:Linear )
     Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+@ $Script_EnterMap {
+    Call  GetEntryID    ( *Var[0] )
+    Switch  *Var[0]
+        Default
+            Exec  $Script_CreateExitTriggers
+            Exec $Script_EntranceCutscene
+    EndSwitch
+    Return
+    End
+}
+
+#new:Script $Script_EntranceCutscene
+{
     Return
     End
 }
